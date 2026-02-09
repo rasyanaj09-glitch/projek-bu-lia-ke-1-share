@@ -52,10 +52,23 @@
 <div class="main-content">
     <div class="top-bar">
         <h2>Product List</h2>
-        <div class="user-info"></div>
-            <div class="user-avatar">
+        <div class="user-info"><div class="user-avatar">
                 {{ strtoupper(substr(Auth::user()->name, 0, 1)) }}
             </div>
+        </div>
+            <div> <strong>{{ Auth::user()->name }}</strong>
+            <form action="{{ route('logout') }}" method="POST" style="display: inline">
+                @csrf
+                <button type="submit" class="logout-btn">Logout</button>
+            </form>
+         </div>
+            @if (session('success'))
+                <div class="alert alert-success">
+                   <i class="bi bi-check-circle"></i>
+                   {{ session('success') }}
+                </div>
+            @endif
+            
     </div>
 </body>
 </html>
