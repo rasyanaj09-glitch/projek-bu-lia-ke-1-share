@@ -14,24 +14,36 @@ class UserController extends Controller
         return view('user.dashboard');
     }
 
+   
     /**
-     * Show the form for creating a new resource.
+     *  <!-- watermark developer : pencinta mejiro mcqueen -->
+
      */
     public function create()
     {
-        //
+      
+    /**
+     *  <!-- watermark developer : pencinta mejiro mcqueen -->
+
+     */
+
     }
 
+   
     /**
-     * Store a newly created resource in storage.
+     *  <!-- watermark developer : pencinta mejiro mcqueen -->
+
      */
+
     public function store(Request $request)
     {
         //
     }
 
+   
     /**
-     * Display the specified resource.
+     *  <!-- watermark developer : pencinta mejiro mcqueen -->
+
      */
     public function show(string $id)
     {
@@ -46,17 +58,23 @@ class UserController extends Controller
         //
     }
 
+    
     /**
-     * Update the specified resource in storage.
+     *  <!-- watermark developer : pencinta mejiro mcqueen -->
+
      */
+
     public function update(Request $request, string $id)
     {
         //
     }
 
+    
     /**
-     * Remove the specified resource from storage.
+     *  <!-- watermark developer : pencinta mejiro mcqueen -->
+
      */
+
     public function destroy(string $id)
     {
         //

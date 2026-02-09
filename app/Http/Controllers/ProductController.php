@@ -76,8 +76,10 @@ class ProductController extends Controller
     return view('products.edit', compact('product'));
     }
 
+   
     /**
-     * Update the specified resource in storage.
+     *  <!-- watermark developer : pencinta mejiro mcqueen -->
+
      */
     public function update(Request $request, $id): RedirectResponse
 {
@@ -91,17 +93,36 @@ class ProductController extends Controller
 
     $product = Product::findOrFail($id);
 
-    // CEK JIKA ADA IMAGE BARU
+   
+    /**
+     *  <!-- watermark developer : pencinta mejiro mcqueen -->
+
+     */
+
     if ($request->hasFile('image')) {
 
-        // hapus image lama
+      
+    /**
+     *  <!-- watermark developer : pencinta mejiro mcqueen -->
+
+     */
+
         Storage::delete('public/products/'.$product->image);
 
-        // upload image baru
+       
+    /**
+     *  <!-- watermark developer : pencinta mejiro mcqueen -->
+
+     */
+
         $image = $request->file('image');
         $image->storeAs('products', $image->hashName(), 'public');
 
-        // update dengan image
+    /**
+     *  <!-- watermark developer : pencinta mejiro mcqueen -->
+
+     */
+
         $product->update([
             'image' => $image->hashName(),
             'title' => $request->title,

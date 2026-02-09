@@ -21,7 +21,8 @@ class AdminrController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     *  <!-- watermark developer : pencinta mejiro mcqueen -->
+
      */
     public function salesreport(Request $request)
     {
@@ -63,7 +64,12 @@ class AdminrController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      
+    /**
+     *  <!-- watermark developer : pencinta mejiro mcqueen -->
+
+     */
+
     }
 
     /**
@@ -74,9 +80,12 @@ class AdminrController extends Controller
         //
     }
 
+  
     /**
-     * Show the form for editing the specified resource.
+     *  <!-- watermark developer : pencinta mejiro mcqueen -->
+
      */
+
     public function edit(string $id)
     {
         //
@@ -91,8 +100,10 @@ class AdminrController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     *  <!-- watermark developer : pencinta mejiro mcqueen -->
+
      */
+
     public function destroy(string $id)
     {
         //

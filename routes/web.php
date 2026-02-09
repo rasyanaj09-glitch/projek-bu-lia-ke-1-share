@@ -5,24 +5,29 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AdminrController;
 use App\Http\Controllers\AdminrorderController;
 
-
-
+// Redirect root ke login
 Route::get('/', function () {
     return redirect('/login');
 });
-route::post('/logout', [App\Http\Controllers\AuthController::class, 'log_out'])->name('logout');
+
+// Auth
 Route::get('/login', [App\Http\Controllers\AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [App\Http\Controllers\AuthController::class, 'login']);
-Route::get('/products', [ProductController::class, 'index'])->name('products.index');
-Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
-route::post('/products', [ProductController::class, 'store'])->name('products.store');
-route::get('/admin/reports/sales', [App\Http\Controllers\AdminrController::class, 'salesReport'])->name('admin.sales');
-route::get('/admin/orders', [App\Http\Controllers\AdminrorderController::class, 'index'])->name('admin.orders.index');
-route::get('/admin/orders/{id}', [App\Http\Controllers\AdminrorderController::class, 'show'])->name('admin.orders.show');
-route::put('/admin/orders/{id}', [App\Http\Controllers\AdminrorderController::class, 'update'])->name('admin.orders.update');
+Route::post('/logout', [App\Http\Controllers\AuthController::class, 'log_out'])->name('logout');
 
-route::get('/admin/dashboard', [App\Http\Controllers\AdminrController::class, 'dashboard'])->name('admin.dashboard');
-route::get('/user/dashboard', [App\Http\Controllers\UserController::class, 'dashboard'])->name('user.dashboard');
-Route::delete('/products/{id}', [ProductController::class, 'destroy'])
-    ->name('products.destroy');
+// Admin Dashboard
+Route::get('/admin/dashboard', [AdminrController::class, 'dashboard'])
+    ->middleware('auth')
+    ->name('admin.dashboard');
+
+// Orders
+Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::get('/orders', [AdminrorderController::class, 'index'])->name('admin.orders.index');
+    Route::get('/orders/{id}', [AdminrorderController::class, 'show'])->name('admin.orders.show');
+    Route::put('/orders/{id}', [AdminrorderController::class, 'update'])->name('admin.orders.update');
+
+    Route::get('/reports/sales', [AdminrController::class, 'salesReport'])->name('admin.sales');
+});
+
+// Products (gunakan resource)
 Route::resource('products', ProductController::class);

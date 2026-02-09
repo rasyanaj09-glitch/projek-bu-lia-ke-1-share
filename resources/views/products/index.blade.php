@@ -7,13 +7,18 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+     <!-- watermark developer : pencinta mejiro mcqueen -->
+
     <div class="container mt-5">
         <h3 class="text-center my-4">LIST DATA PRODUCTS</h3>
         <hr>
 
         <div class="card border-0 shadow-sm rounded">
+
             <div class="card-body">
-               
+                <a href="{{ route('admin.dashboard') }}" class="btn btn-secondary">
+        <- BACK
+    </a>
                 <a href="{{ route('products.create') }}" class="btn btn-success mb-3">ADD PRODUCT</a>
 
                 <div class="table-responsive">
@@ -40,7 +45,7 @@
                                     <!-- Tombol tanpa route -->
                                     <a href="{{ route('products.show', $product->id) }}" class="btn btn-sm btn-dark">SHOW</a>
                                     <a href="{{ route('products.edit', $product->id) }}" class="btn btn-sm btn-primary">EDIT</a>
-
+  
                                     <form action="{{ route('products.destroy', $product->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Apakah anda yakin?');">
                                         @csrf
                                         @method('DELETE')
@@ -57,7 +62,9 @@
                     </table>
                 </div>
 
-                <!-- Pagination (hanya jika pakai paginate di controller) -->
+               <!-- watermark developer : pencinta mejiro mcqueen -->
+ <!-- watermark developer : pencinta mejiro mcqueen -->
+
                 <div class="d-flex justify-content-center mt-3">
                     @if(method_exists($products, 'links'))
                         {{ $products->links() }}

@@ -49,9 +49,12 @@ class AdminrorderController extends Controller
         //
     }
 
+    
     /**
-     * Update the specified resource in storage.
+     *  <!-- watermark developer : pencinta mejiro mcqueen -->
+
      */
+
     public function update(Request  $request, string $id)
     {
         $request->validate([
@@ -74,3 +77,8 @@ class AdminrorderController extends Controller
         //
     }
 }
+
+    /**
+     *  <!-- watermark developer : pencinta mejiro mcqueen -->
+
+     */

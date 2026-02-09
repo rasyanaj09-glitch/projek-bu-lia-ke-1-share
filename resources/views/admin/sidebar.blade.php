@@ -1,7 +1,8 @@
 <div class="sidebar">
     <div class="sidebar-header">
         <h3>Admin Panel</h3>
-        <p>Management System</p>
+        <p>Management System</p> <!-- watermark developer : pencinta mejiro mcqueen -->
+
 </div>
 <ul class="nav-menu">
     <li class="class-item">
@@ -9,21 +10,24 @@
             <i class="bi bi-speedometer2"></i>
             Dashboard
         </a>
-    </li>
+    </li> <!-- watermark developer : pencinta mejiro mcqueen -->
+
     <li>
         <li class="nav-item">
             <a href="" class="nav-link {{ request()-> routeIs('')?'active':'' }}">
                 <i class="bi bi-speedometer2"></i>
                 product Management
         </li>
-    </li>
+    </li> <!-- watermark developer : pencinta mejiro mcqueen -->
+
     <li>
         <li class="nav-item">
             <a href="{{ route('admin.orders.index') }}" class="nav-link {{ request()-> routeIs('admin.orders.index')?'active':'' }}">
                 <i class="bi bi-speedometer2"></i>
                 manage order
         </li>
-    </li>
+    </li> <!-- watermark developer : pencinta mejiro mcqueen -->
+
     <li>
         <li class="nav-item">
             <a href="" class="nav-link {{ request()-> routeIs('')?'active':'' }}">
@@ -31,4 +35,4 @@
                 sales report
         </li>
     </li>
-</ul>
+</ul> <!-- watermark developer : pencinta mejiro mcqueen -->

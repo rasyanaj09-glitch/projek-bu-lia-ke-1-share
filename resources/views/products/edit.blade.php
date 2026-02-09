@@ -14,13 +14,15 @@
 <div class="container mt-5">
     <h3 class="text-center my-4">EDIT PRODUCT</h3>
     <hr>
+ <!-- watermark developer : pencinta mejiro mcqueen -->
 
 
     <form action="{{ route('products.update', $product->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
 
-    <!-- TITLE -->
+ <!-- watermark developer : pencinta mejiro mcqueen -->
+
     <div class="form-group mb-3">
         <label class="font-weight-bold">Title</label>
         <input type="text"
@@ -34,7 +36,8 @@
         @enderror
     </div>
 
-    <!-- DESCRIPTION -->
+ <!-- watermark developer : pencinta mejiro mcqueen -->
+
     <div class="form-group mb-3">
         <label class="font-weight-bold">Description</label>
         <textarea class="form-control @error('description') is-invalid @enderror"
@@ -45,8 +48,9 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
+ <!-- watermark developer : pencinta mejiro mcqueen -->
 
-    <!-- IMAGE -->
+
     <div class="form-group mb-3">
         <label class="font-weight-bold">Image</label>
         <input type="file"
@@ -57,8 +61,9 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
+ <!-- watermark developer : pencinta mejiro mcqueen -->
 
-    <!-- PRICE -->
+
     <div class="form-group mb-3">
         <label class="font-weight-bold">Price</label>
         <input type="number"
@@ -71,8 +76,8 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
+ <!-- watermark developer : pencinta mejiro mcqueen -->
 
-    <!-- STOCK -->
     <div class="form-group mb-3">
         <label class="font-weight-bold">Stock</label>
         <input type="number"

@@ -43,9 +43,12 @@ return back()->withErrors([
         // Add login logic here
     }
 
+  
     /**
-     * Store a newly created resource in storage.
+     *  <!-- watermark developer : pencinta mejiro mcqueen -->
+
      */
+
     public function log_out(Request $request)
     {
         Auth::logout();
@@ -62,9 +65,12 @@ return back()->withErrors([
         //
     }
 
+    
     /**
-     * Show the form for editing the specified resource.
+     *  <!-- watermark developer : pencinta mejiro mcqueen -->
+
      */
+
     public function edit(string $id)
     {
         //
@@ -78,9 +84,12 @@ return back()->withErrors([
         //
     }
 
+
     /**
-     * Remove the specified resource from storage.
+     *  <!-- watermark developer : pencinta mejiro mcqueen -->
+
      */
+
     public function destroy(string $id)
     {
         //

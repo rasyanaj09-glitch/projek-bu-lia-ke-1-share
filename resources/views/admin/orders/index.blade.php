@@ -116,6 +116,11 @@
                                             {{ ucfirst($order->status) }}
                                         </span>
                                     </td>
+ <!-- watermark developer : pencinta mejiro mcqueen -->
+ <!-- watermark developer : pencinta mejiro mcqueen -->
+ <!-- watermark developer : pencinta mejiro mcqueen -->
+ <!-- watermark developer : pencinta mejiro mcqueen -->
+ <!-- watermark developer : pencinta mejiro mcqueen -->
 
                                     <td>
                                         <span class="badge-payment-{{ $order->payment_status }}">

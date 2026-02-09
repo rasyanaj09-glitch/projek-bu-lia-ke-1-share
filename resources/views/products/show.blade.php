@@ -11,6 +11,8 @@
 
 </head>
 <body>
+     <!-- watermark developer : pencinta mejiro mcqueen -->
+
     <div class="container mt-5 mb-5">
         <div class="row">
             <div class="col-md-4">
@@ -32,7 +34,7 @@
                     {!! $product->description !!}
                 </p>
                 <hr/>
-                
+
             </code>
             <h4 class="mt-3">Stock : {{ $product->stock }}</h4>
             </div>

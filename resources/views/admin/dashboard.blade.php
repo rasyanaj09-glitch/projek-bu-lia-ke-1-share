@@ -8,10 +8,12 @@
     <title>Dashboard Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <style>
+    <style> <!-- watermark developer : pencinta mejiro mcqueen -->
+
 
     </style>
 </head>
+
 
 <body>
     @include('admin.sidebar')
@@ -37,7 +39,8 @@
                 <h3></h3>
                 <p>Total Products</p>
             </div>
-        </div>
+        </div> 
+
     </div>
      <div class="stats-grid">
         <div class="stat-card">
@@ -47,16 +50,19 @@
                 <p>Total Orders</p>
             </div>
         </div>
-    </div>
+    </div> 
+
      <div class="stats-grid">
         <div class="stat-card">
             <div class="stat-icon purple">
                 <i class="bi bi-box-seam"></i>
                 <h3></h3>
-                <p>Total Revenue</p>
+                <p>Total Revenue</p> 
+
             </div>
         </div>
-    </div>
+    </div> 
+
     <div class="quck-actions">
         <h5>Quick Actions</h5>
         <a href="{{ route('products.index') }}" class="action-button">
@@ -67,6 +73,7 @@
         </a>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+</body> <!-- watermark developer : pencinta mejiro mcqueen -->
+
 
 </html>

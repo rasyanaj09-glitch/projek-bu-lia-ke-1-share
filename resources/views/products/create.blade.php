@@ -18,8 +18,8 @@
 
     <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
+ <!-- watermark developer : pencinta mejiro mcqueen -->
 
-    <!-- TITLE -->
     <div class="form-group mb-3">
         <label class="font-weight-bold">Title</label>
         <input type="text"
@@ -32,8 +32,8 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
+ <!-- watermark developer : pencinta mejiro mcqueen -->
 
-    <!-- DESCRIPTION -->
     <div class="form-group mb-3">
         <label class="font-weight-bold">Description</label>
         <textarea class="form-control @error('description') is-invalid @enderror"
@@ -45,7 +45,8 @@
         @enderror
     </div>
 
-    <!-- IMAGE -->
+ <!-- watermark developer : pencinta mejiro mcqueen -->
+
     <div class="form-group mb-3">
         <label class="font-weight-bold">Image</label>
         <input type="file"
@@ -57,7 +58,8 @@
         @enderror
     </div>
 
-    <!-- PRICE -->
+ <!-- watermark developer : pencinta mejiro mcqueen -->
+
     <div class="form-group mb-3">
         <label class="font-weight-bold">Price</label>
         <input type="number"
@@ -71,7 +73,8 @@
         @enderror
     </div>
 
-    <!-- STOCK -->
+ <!-- watermark developer : pencinta mejiro mcqueen -->
+
     <div class="form-group mb-3">
         <label class="font-weight-bold">Stock</label>
         <input type="number"
@@ -84,10 +87,12 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
+ <!-- watermark developer : pencinta mejiro mcqueen -->
 
     <button type="submit" class="btn btn-primary">SAVE</button>
     <button type="reset" class="btn btn-warning">RESET</button>
 </form>
+ <!-- watermark developer : pencinta mejiro mcqueen -->
 
 
 </div>

@@ -80,12 +80,14 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>No</th>
+                            <th>No</th> <!-- watermark developer : pencinta mejiro mcqueen -->
+
                             <th>Order ID</th>
                             <th>Customer Name</th>
                             <th>Total Amount</th>
                             <th>Status</th>
-                            <th>Order Date</th>
+                            <th>Order Date</th> <!-- watermark developer : pencinta mejiro mcqueen -->
+
                         </tr>
                     </thead>
                     <tbody>
@@ -94,19 +96,24 @@
                                 <td style="font-family: monospace;">{{ $order->order_id }}</td>
                                 <td>{{ $order->customer_name }}</td>
                                 <td>Rp {{ number_format($order->total_amount, 0, ',', '.') }}</td>
-                                <td>
+                                <td> <!-- watermark developer : pencinta mejiro mcqueen -->
+ <!-- watermark developer : pencinta mejiro mcqueen -->
+ <!-- watermark developer : pencinta mejiro mcqueen -->
+
                                     <span class="badge-status-status {{ $order->status }}">
                                         {{ ucfirst($order->status) }}
                                 </td>
                                 <td class="text-uppercase">{{ str_replace('_', ' ', $order->payment_method) }}</td>
-                            </tr>
+                            </tr> <!-- watermark developer : pencinta mejiro mcqueen -->
+
                         @empty
                             <tr></tr>
                             <td colspan="6" class="text-center">
                                 <i class="bi bi-fs-1 text-muted"></i>
                                 <p class="text-muted mt-2">No orders available for the selected period.</p>
                         @endforelse
-                </table>
+                </table> <!-- watermark developer : pencinta mejiro mcqueen -->
+
 
 
             </div>
