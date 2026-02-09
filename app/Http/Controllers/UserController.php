@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class UserController extends Controller
 {
@@ -19,13 +20,11 @@ class UserController extends Controller
      *  <!-- watermark developer : pencinta mejiro mcqueen -->
 
      */
-    public function create()
+    public function product()
     {
       
-    /**
-     *  <!-- watermark developer : pencinta mejiro mcqueen -->
-
-     */
+   $product=Product::paginate(10);
+        return view('user.products.index', compact('product'));
 
     }
 
