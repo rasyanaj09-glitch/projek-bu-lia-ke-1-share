@@ -1,19 +1,34 @@
-s="sidebar-menu">
-    <li class="sidebar-menu-item">
-        <a href="{{ route('admin.dashboard') }}" class="sidebar-menu-link">
-            <i class="sidebar-menu-icon fas fa-tachometer-alt"></i>
-            <span class="sidebar-menu-text">Dashboard</span>
+<div class="sidebar">
+    <div class="sidebar-header">
+        <h3>Admin Panel</h3>
+        <p>Management System</p>
+</div>
+<ul class="nav-menu">
+    <li class="class-item">
+        <a href="{{ route('admin.dashboard') }}"class="nav-link{{ request()->routeIs('admin.dashboard')?'active':'' }}">
+            <i class="bi bi-speedometer2"></i>
+            Dashboard
         </a>
     </li>
-    <li class="sidebar-menu-item">
-        <a href="{{ route('admin.orders.index') }}" class="sidebar-menu-link">
-            <i class="sidebar-menu-icon fas fa-shopping-cart"></i>
-            <span class="sidebar-menu-text">Orders</span>
-        </a>
+    <li>
+        <li class="nav-item">
+            <a href="" class="nav-link {{ request()-> routeIs('')?'active':'' }}">
+                <i class="bi bi-speedometer2"></i>
+                product Management
+        </li>
     </li>
-    <li class="sidebar-menu-item">
-        <a href="{{ route('admin.sales') }}" class="sidebar-menu-link">
-            <i class="sidebar-menu-icon fas fa-chart-line"></i>
-            <span class="sidebar-menu-text">Sales Report</span>
-        </a>
+    <li>
+        <li class="nav-item">
+            <a href="{{ route('admin.orders.index') }}" class="nav-link {{ request()-> routeIs('admin.orders.index')?'active':'' }}">
+                <i class="bi bi-speedometer2"></i>
+                manage order
+        </li>
     </li>
+    <li>
+        <li class="nav-item">
+            <a href="" class="nav-link {{ request()-> routeIs('')?'active':'' }}">
+                <i class="bi bi-speedometer2"></i>
+                sales report
+        </li>
+    </li>
+</ul>

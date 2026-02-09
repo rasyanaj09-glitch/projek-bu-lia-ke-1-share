@@ -13,7 +13,7 @@ Route::get('/', function () {
 route::post('/logout', [App\Http\Controllers\AuthController::class, 'log_out'])->name('logout');
 Route::get('/login', [App\Http\Controllers\AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [App\Http\Controllers\AuthController::class, 'login']);
-Route::get('/products', [ProductController::class, 'index']);
+Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
 route::post('/products', [ProductController::class, 'store'])->name('products.store');
 route::get('/admin/reports/sales', [App\Http\Controllers\AdminrController::class, 'salesReport'])->name('admin.sales');
@@ -23,3 +23,6 @@ route::put('/admin/orders/{id}', [App\Http\Controllers\AdminrorderController::cl
 
 route::get('/admin/dashboard', [App\Http\Controllers\AdminrController::class, 'dashboard'])->name('admin.dashboard');
 route::get('/user/dashboard', [App\Http\Controllers\UserController::class, 'dashboard'])->name('user.dashboard');
+Route::delete('/products/{id}', [ProductController::class, 'destroy'])
+    ->name('products.destroy');
+Route::resource('products', ProductController::class);

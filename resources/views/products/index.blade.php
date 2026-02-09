@@ -38,10 +38,10 @@
                                 <td>{{ $product->stock }}</td>
                                 <td class="text-center">
                                     <!-- Tombol tanpa route -->
-                                    <a href="#" class="btn btn-sm btn-dark">SHOW</a>
-                                    <a href="#" class="btn btn-sm btn-primary">EDIT</a>
+                                    <a href="{{ route('products.show', $product->id) }}" class="btn btn-sm btn-dark">SHOW</a>
+                                    <a href="{{ route('products.edit', $product->id) }}" class="btn btn-sm btn-primary">EDIT</a>
 
-                                    <form action="#" method="POST" class="d-inline" onsubmit="return confirm('Apakah anda yakin?');">
+                                    <form action="{{ route('products.destroy', $product->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Apakah anda yakin?');">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-sm btn-danger">DELETE</button>
