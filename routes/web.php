@@ -10,6 +10,7 @@ Route::get('/', function () {
     return redirect('/login');
 });
 
+
 // Auth
 Route::get('/login', [App\Http\Controllers\AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [App\Http\Controllers\AuthController::class, 'login']);
@@ -37,3 +38,16 @@ Route::resource('products', ProductController::class);
 Route::get('/user/dashboard', [App\Http\Controllers\UserController::class, 'dashboard'])
     ->middleware('auth')
     ->name('user.dashboard');
+
+
+    route::get('/user/products', [App\Http\Controllers\UserController::class, 'product'])
+    ->middleware('auth')
+    ->name('user.products.index');
+
+// Cart Routes
+Route::prefix('cart')->middleware('auth')->group(function () {
+    Route::get('/', [App\Http\Controllers\CartController::class, 'index'])->name('cart.index');
+    Route::post('/add/{productId}', [App\Http\Controllers\CartController::class, 'add'])->name('cart.add');
+    Route::put('/update/{cartId}', [App\Http\Controllers\CartController::class, 'update'])->name('cart.update');   
+    Route::delete('/remove/{cartId}', [App\Http\Controllers\CartController::class, 'remove'])->name('cart.remove');
+});
