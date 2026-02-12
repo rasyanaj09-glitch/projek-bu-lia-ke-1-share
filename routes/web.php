@@ -19,6 +19,8 @@ Route::post('/logout', [App\Http\Controllers\AuthController::class, 'log_out'])-
 Route::get('/admin/dashboard', [AdminrController::class, 'dashboard'])
     ->middleware('auth')
     ->name('admin.dashboard');
+    Route::resource('admin/products', ProductController::class);
+
 
 // Orders
 Route::prefix('admin')->middleware('auth')->group(function () {

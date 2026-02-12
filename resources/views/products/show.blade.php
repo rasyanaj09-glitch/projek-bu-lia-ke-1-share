@@ -3,41 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SHOW PRODUCT</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    <!-- CSS INTERNAL -->
+    <style>
+        body {
+            background-color: #f4f6f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .product-card {
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            padding: 20px;
+        }
+
+        .product-image {
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .product-image:hover {
+            transform: scale(1.03);
+        }
+
+        .product-title {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .price {
+            color: #198754;
+            font-weight: bold;
+        }
+
+        .stock {
+            font-weight: 500;
+            color: #0d6efd;
+        }
+
+        .description-box {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+    </style>
 </head>
+
 <body>
-     <!-- watermark developer : pencinta mejiro mcqueen -->
 
-    <div class="container mt-5 mb-5">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card-border-0 shadow-sm rounded"></div>
-                    <img src="{{ asset('storage/products/'.$product->image) }}" style="width:100%" class="rounded">
+<!-- watermark developer : pencinta mejiro mcqueen -->
 
+<div class="container mt-5 mb-5">
+    <div class="row g-4">
 
-                </div>
+        <!-- IMAGE -->
+        <div class="col-md-4">
+            <div class="product-card text-center">
+                <img 
+                    src="{{ asset('storage/products/'.$product->image) }}" 
+                    class="img-fluid product-image"
+                >
             </div>
         </div>
-        <div class="col-md-8">
-            <div class="card-border-0 shadow-sm rounded p-3">
-            <h3 class="text-center mb-4">{{ $product->title }}</h3>
-            <hr>
-            <p class="text-justify">{{ $product->description }}</p>
-            <h4 class="mt-3">Price : Rp. {{ number_format($product->price, 0, ',', '.') }}</h4>
-            <code>
-                <p>
-                    {!! $product->description !!}
-                </p>
-                <hr/>
 
-            </code>
-            <h4 class="mt-3">Stock : {{ $product->stock }}</h4>
+        <!-- DETAIL -->
+        <div class="col-md-8">
+            <div class="product-card">
+
+                <h3 class="text-center mb-4 product-title">
+                    {{ $product->title }}
+                </h3>
+
+                <hr>
+
+                <div class="description-box mb-3">
+                    {!! $product->description !!}
+                </div>
+
+                <h4 class="price">
+                    Price : Rp. {{ number_format($product->price, 0, ',', '.') }}
+                </h4>
+
+                <h5 class="stock mt-3">
+                    Stock : {{ $product->stock }}
+                </h5>
+
             </div>
+        </div>
+
     </div>
+</div>
+
 </body>
 </html>
+    <!-- watermark developer : pencinta mejiro mcqueen -->
