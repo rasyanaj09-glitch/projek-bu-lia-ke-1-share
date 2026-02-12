@@ -36,7 +36,7 @@
         <div class="stat-card">
             <div class="stat-icon purple">
                 <i class="bi bi-box-seam"></i>
-                <h3></h3>
+                <h3>{{ $productCount }}</h3>
                 <p>Total Products</p>
             </div>
         </div> 
@@ -46,7 +46,7 @@
         <div class="stat-card">
             <div class="stat-icon purple">
                 <i class="bi bi-box-seam"></i>
-                <h3></h3>
+                <h3>{{ $orderCount }}</h3>
                 <p>Total Orders</p>
             </div>
         </div>
@@ -56,7 +56,7 @@
         <div class="stat-card">
             <div class="stat-icon purple">
                 <i class="bi bi-box-seam"></i>
-                <h3></h3>
+                <h3>Rp {{ number_format($revenue, 0, ',', '.') }}</h3>
                 <p>Total Revenue</p> 
 
             </div>

@@ -12,7 +12,8 @@ class UserController extends Controller
      */
     public function dashboard()
     {
-        return view('user.dashboard');
+        $products = Product::all();
+    return view('user.dashboard', compact('products'));
     }
 
    

@@ -29,5 +29,9 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/reports/sales', [AdminrController::class, 'salesReport'])->name('admin.sales');
 });
 
-// Products (gunakan resource)
+// Products
 Route::resource('products', ProductController::class);
+// User Dashboard
+Route::get('/user/dashboard', [App\Http\Controllers\UserController::class, 'dashboard'])
+    ->middleware('auth')
+    ->name('user.dashboard');
