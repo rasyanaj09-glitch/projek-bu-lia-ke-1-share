@@ -13,7 +13,7 @@ class UserController extends Controller
     public function dashboard()
     {
         $products = Product::all();
-    return view('user.dashboard', compact('products'));
+   return view('user.dashboard', compact('products'));
     }
 
    
@@ -21,13 +21,11 @@ class UserController extends Controller
      *  <!-- watermark developer : pencinta mejiro mcqueen -->
 
      */
-    public function product()
-    {
-      
-   $product=Product::paginate(10);
-        return view('user.products.index', compact('product'));
-
-    }
+   public function product()
+{
+    $products = Product::paginate(10);
+    return view('user.dashboard', compact('products'));
+}
 
    
     /**

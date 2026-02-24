@@ -11,15 +11,17 @@ class CartController extends Controller
 {
     public function index()
     {
-        $cartItems = Cart::where('user_id', Auth::id())
-            ->with('product')
-            ->get();
+         $cartItems = Cart::where('user_id', Auth::id())
+        ->with('product')
+        ->get();
 
-        $total = $cartItems->sum(function ($item) {
-            return $item->product->price * $item->quantity;
-        });
+    $total = $cartItems->sum(function ($item) {
+        return $item->product->price * $item->quantity;
+    });
 
-        return view('cart.index', compact('cartItems', 'total'));
+    $products = Product::all(); // <-- tambahkan ini
+
+    return view('user.cart', compact('cartItems', 'total', 'products'));
     }
 
     /**

@@ -44,6 +44,17 @@ Route::get('/user/dashboard', [App\Http\Controllers\UserController::class, 'dash
     ->middleware('auth')
     ->name('user.products.index');
 
+     route::get('/user/products', [App\Http\Controllers\UserController::class, 'product'])
+    ->middleware('auth')
+    ->name('user.products');
+
+
+    // Detail produk user
+Route::get('/user/products/{id}', function($id){
+    $product = \App\Models\Product::findOrFail($id);
+    return view('user.product', compact('product'));
+})->middleware('auth')->name('user.product.show');
+
 // Cart Routes
 Route::prefix('cart')->middleware('auth')->group(function () {
     Route::get('/', [App\Http\Controllers\CartController::class, 'index'])->name('cart.index');
@@ -51,3 +62,9 @@ Route::prefix('cart')->middleware('auth')->group(function () {
     Route::put('/update/{cartId}', [App\Http\Controllers\CartController::class, 'update'])->name('cart.update');   
     Route::delete('/remove/{cartId}', [App\Http\Controllers\CartController::class, 'remove'])->name('cart.remove');
 });
+
+// Checkout Route
+Route::get('/checkout', [App\Http\Controllers\Checkout::class, 'checkout'])->middleware('auth')->name('checkout');
+Route::post('/checkout/process', [App\Http\Controllers\Checkout::class, 'prosesCheckout'])->middleware('auth')->name('checkout.process');
+Route::get('/confirmation', [App\Http\Controllers\Checkout::class, 'confirmation'])->middleware('auth')->name('checkout.confirmation');
+Route::get('/order/{orderid}', [App\Http\Controllers\Checkout::class, 'details'])->middleware('auth')->name('order.details');
